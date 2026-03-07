@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from 'src/app.module';
+import { AppModule } from '@/app.module';
 import { Repository } from 'typeorm';
-import { User } from 'src/database/entities/user.entity';
-import { errorMessages } from 'src/errors/custom';
+import { User } from '@/shared/database/entities/user.entity';
+import { errorMessages } from '@/shared/errors/custom';
 
 describe('AuthController (e2e)', () => {
   let app: INestApplication;

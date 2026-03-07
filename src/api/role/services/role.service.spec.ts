@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Role } from '../../../database/entities/role.entity';
+import { Role } from '../../../shared/database/entities/role.entity';
 import { RoleService } from './role.service';
 import { Repository } from 'typeorm';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { RoleIds, Roles } from '../enum/role.enum';
-import { User } from '../../../database/entities/user.entity';
-import { UserService } from 'src/api/user/services/user.service';
-import { errorMessages } from 'src/errors/custom';
+import { User } from '../../../shared/database/entities/user.entity';
+import { UserService } from '@api/user/services/user.service';
+import { errorMessages } from '@/shared/errors/custom';
 
 describe('RoleService', () => {
   let service: RoleService;

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { UserModule } from '../user/user.module';
-import { User } from '../../database/entities/user.entity';
+import { User } from '../../shared/database/entities/user.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JwtModule } from '@nestjs/jwt';
 import { RoleModule } from '../role/role.module';

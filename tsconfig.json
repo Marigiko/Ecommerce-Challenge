@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
@@ -9,7 +10,17 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@test/*": ["test/*"],
+      "@config/*": ["src/shared/config/*"],
+      "@database/*": ["src/shared/database/*"],
+      "@helpers/*": ["src/shared/helpers/*"],
+      "@errors/*": ["src/shared/errors/*"],
+      "@modules/*": ["src/modules/*"],
+      "@api/*": ["src/api/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,

@@ -1,14 +1,14 @@
 import { ConfigModule } from '@nestjs/config';
 import { Test, TestingModule } from '@nestjs/testing';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { configuration } from 'src/config';
-import { TypeOrmConfigService } from 'src/database/typeorm/typeorm.service';
+import { configuration } from '@/shared/config';
+import { TypeOrmConfigService } from '@/shared/database/typeorm/typeorm.service';
 import { AuthModule } from '../../auth/auth.module';
 import { RoleController } from './role.controller';
-import { Role } from '../../../database/entities/role.entity';
+import { Role } from '../../../shared/database/entities/role.entity';
 import { RoleIds, Roles } from '../enum/role.enum';
 import { RoleService } from '../services/role.service';
-import { UserService } from 'src/api/user/services/user.service';
+import { UserService } from '@api/user/services/user.service';
 
 describe('RoleController', () => {
   let controller: RoleController;
