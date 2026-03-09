@@ -5,6 +5,9 @@ import { ProductController } from './interface/controllers/product.controller';
 
 import { UserModule } from '@api/user/user.module';
 
+import { InventoryModule } from '../inventory/inventory.module';
+import { AuditModule } from '../audit/audit.module';
+
 import { Product } from './domain/entities/product.entity';
 import { Category } from '@database/entities/category.entity';
 import { User } from '@database/entities/user.entity';
@@ -19,11 +22,14 @@ import { ProductValidatorService } from './application/services/product-validato
 
 import { ProductCreatedHandler } from './application/event-handlers/product-created.handler';
 import { ProductRepository } from './infrastructure/repositories/product.repository';
+import { ProductActivatedHandler } from './application/event-handlers/product-activated.handler';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([Product, Category, User]),
     UserModule,
+    InventoryModule,
+    AuditModule,
   ],
 
   controllers: [ProductController],
@@ -44,6 +50,7 @@ import { ProductRepository } from './infrastructure/repositories/product.reposit
 
     // event handlers
     ProductCreatedHandler,
+    ProductActivatedHandler,
   ],
 
   exports: [ProductRepository],

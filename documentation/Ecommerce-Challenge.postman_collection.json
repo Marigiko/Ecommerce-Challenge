@@ -1,0 +1,236 @@
+{
+  "info": {
+    "_postman_id": "fbbf8901-0726-47e1-9e66-d0f569a81fa4",
+    "name": "Ecommerce-Challenge",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17849791"
+  },
+  "item": [
+    {
+      "name": "https://ecommerce-challenge-production.up.railway.app/auth/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"email\": \"admin@admin.com\",\r\n \"password\": \"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ecommerce-challenge-production.up.railway.app/auth/login",
+          "protocol": "https",
+          "host": [
+            "ecommerce-challenge-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://ecommerce-challenge-production.up.railway.app/product/create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NzI5NTM2MDIsImV4cCI6MTc3Mjk2NDQwMn0.7T4lbwr8WlT9NAUBwaaVPg95Z_VSCl9ZLsW1nXfKbto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"categoryId\": 1,\r\n    \"title\": \"Laptop Test\",\r\n    \"variationType\": \"OnlySize\",\r\n    \"details\": {\r\n        \"category\": \"Computers\",\r\n        \"capacityUnit\": \"TB\",\r\n        \"capacityType\": \"SSD\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ecommerce-challenge-production.up.railway.app/product/create",
+          "protocol": "https",
+          "host": [
+            "ecommerce-challenge-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "product",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://ecommerce-challenge-production.up.railway.app/product/1/details",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NzI5NTM2MDIsImV4cCI6MTc3Mjk2NDQwMn0.7T4lbwr8WlT9NAUBwaaVPg95Z_VSCl9ZLsW1nXfKbto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"title\": \"Laptop Test\",\r\n \"code\": \"ABC123\",\r\n \"variationType\": \"NONE\",\r\n \"details\": {\r\n   \"category\": \"Computers\",\r\n   \"capacity\": 2,\r\n   \"capacityUnit\": \"TB\",\r\n   \"capacityType\": \"HD\",\r\n   \"brand\": \"Dell\",\r\n   \"series\": \"XPS\"\r\n },\r\n \"about\": [\"about 1\"],\r\n \"description\": \"Gaming laptop\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ecommerce-challenge-production.up.railway.app/product/1/details",
+          "protocol": "https",
+          "host": [
+            "ecommerce-challenge-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "product",
+            "1",
+            "details"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://ecommerce-challenge-production.up.railway.app/product/1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NzI5NTM2MDIsImV4cCI6MTc3Mjk2NDQwMn0.7T4lbwr8WlT9NAUBwaaVPg95Z_VSCl9ZLsW1nXfKbto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ecommerce-challenge-production.up.railway.app/product/1",
+          "protocol": "https",
+          "host": [
+            "ecommerce-challenge-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "product",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://ecommerce-challenge-production.up.railway.app/product/1/activate",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NzI5NTM2MDIsImV4cCI6MTc3Mjk2NDQwMn0.7T4lbwr8WlT9NAUBwaaVPg95Z_VSCl9ZLsW1nXfKbto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://ecommerce-challenge-production.up.railway.app/product/1/activate",
+          "protocol": "https",
+          "host": [
+            "ecommerce-challenge-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "product",
+            "1",
+            "activate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://ecommerce-challenge-production.up.railway.app/user/profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NzI5NTM2MDIsImV4cCI6MTc3Mjk2NDQwMn0.7T4lbwr8WlT9NAUBwaaVPg95Z_VSCl9ZLsW1nXfKbto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ecommerce-challenge-production.up.railway.app/user/profile",
+          "protocol": "https",
+          "host": [
+            "ecommerce-challenge-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "user",
+            "profile"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -9,6 +9,7 @@ export type ProductDetails = ComputerDetails | TestDetails;
 export function ProductDetailsTypeFn(options: TypeHelpOptions) {
   switch (options.object?.details?.category) {
     case Categories.Computers:
+    case Categories.Fashion:
       return ComputerDetails;
     case 'Test':
       return TestDetails;

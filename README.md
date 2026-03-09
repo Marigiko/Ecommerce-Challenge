@@ -1,67 +1,80 @@
-# Ecommerce App with Nest.js and Postgres
+# Ecommerce Backend Challenge
 
-## Description
-This project is an ecommerce application built using Nest.js and Postgres. The focus is on writing clean, modular, and testable code, and following a well-organized project structure.
+This project is an improved version of an existing backend system built with NestJS.
 
-## Technology Stack
+The goal was to refactor the architecture and introduce an event-driven approach.
 
-- Nest.js
+---
+
+## Technical documentation is located in /documentation/ecommerce_challenge_architecture.pdf file
+
+## Tech Stack
+
+- NestJS
 - PostgreSQL
-- TypeORM
-- Jest
+- Docker
+- EventEmitter
 
-## Getting Started
+---
 
-To get started with this project, follow these steps:
+## Running the project
 
-- Clone this repository to your local machine.
-- navigate to the nestjs-ecommerce directory.
+### 1 Install dependencies
 
-```bash 
-cd ./nestjs-ecommerce
-```
-- start postgres database.
+pnpm install
 
-```bash
-docker-compose up -d
-```
+### 2 Setup de .env
 
-- install app dependencies.
+.env examples are located in /envs
 
-```bash
-npm install
-```
+just rename the development.example.env and test.example.env to:
 
-- run database migrations.
+development.env
+test.env
 
-```bash
-npm run migration:run
-```
-if you want to generate any future migration
+### 3 Start database
 
-```bash
-npm run migration:generate --name=<migrationName>
-```
+docker compose up -d
 
-- run database seeders.
+This command starts the PostgreSQL container required by the API.
 
-```bash
-npm run seed:run
-```
+Backend will run at
 
-- start the applictaion.
+http://localhost:3000
 
-```bash
-npm run start:dev
-```
+---
 
-## Testing
-To run the tests, follow these steps:
-1. Install dependencies: `npm install`
-2. Run the tests: `npm run test`
+## API Documentation
 
-## Contributing
-If you're interested in contributing to this project, please follow these guidelines:
-1. Fork the repository
-2. Make your changes
-3. Submit a pull request
+Swagger UI is available at
+
+http://localhost:3000/docs
+
+---
+
+## Postman Collection
+
+Import:
+
+documentation/Ecommerce-Challenge.postman_collection.json
+
+---
+
+## Architecture
+
+The system was refactored to use an **Event-Driven Architecture**.
+
+Events implemented:
+
+- **product.created**
+  - creates inventory (Implementation Needed)
+  - registers audit log
+
+- **product.activated**
+  - triggers analytics (Implementation Needed)
+  - emits notification events
+  - registers audit log
+
+These events trigger side effects such as inventory creation and audit logging.
+
+More details are available in the technical document.
