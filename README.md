@@ -60,6 +60,30 @@ documentation/Ecommerce-Challenge.postman_collection.json
 
 ---
 
+## For testing consider the following information:
+
+- Actually exists 2 user with Admin Role (They are allowed to made API requests):
+
+user: admin@admin.com
+pass: 12345678
+
+user: testing@testing.com
+pass: 123456789
+
+<img width="662" height="153" alt="imagen" src="https://github.com/user-attachments/assets/66bc44da-69b6-4191-b887-3035a48344f2" />
+
+- Only exists one product in the DB, each productID is automatically generated for the DB, so its important that have it in mind when you create a new product (You will need a ProductID for test the differents endpoints)
+
+<img width="926" height="101" alt="imagen" src="https://github.com/user-attachments/assets/4450cb41-ba2e-455c-8fdc-498ad43085ec" />
+
+- Keep in mind that only exists 3 differents roles that you can assign to an user, they are:
+
+<img width="927" height="209" alt="imagen" src="https://github.com/user-attachments/assets/6324f5a7-11b1-4ac0-91e4-8ab32f1c45b6" />
+
+NOTE: If you haven't a admin role (number 3), then you will not can make any request to the API.
+
+---
+
 ## Architecture
 
 The system was refactored to use an **Event-Driven Architecture**.
